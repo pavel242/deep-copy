@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deep-copy</title>
+
+<script src="deep-copy.js"></script>
+
+<script>
+	var data = {
+		info: { desc: 'test' },
+		array: [{ some: 'data'}]
+	};
+
+	data.self = data;
+
+	deepCopy(data)
+		.then(function(copy) {
+			copy.tag = "#copy1";
+			console.log('data: ', data);
+			console.log('copy1: ', copy);
+		});
+
+	deepCopy(data)
+		.then(function(copy) {
+			copy.tag = "#copy2";
+			console.log('data: ', data);
+			console.log('copy2: ', copy);
+		});		
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
