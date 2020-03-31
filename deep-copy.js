@@ -1,6 +1,6 @@
 var deepCopy = (function() {
 	var blob = new Blob(["self.onmessage = function(e) { self.postMessage(e.data); }"], { type: 'application/javascript;' });
-    var url = URL.createObjectURL(blob);
+   	var url = URL.createObjectURL(blob);
 	var worker = new Worker(url);
 	//URL.revokeObjectURL(url);
 
@@ -16,7 +16,7 @@ var deepCopy = (function() {
 		var id = ++count;
 
 		return new Promise(function(resolve) {
-            resolvers[id] = resolve;
+			resolvers[id] = resolve;
 			worker.postMessage({source: data, id: id});
 		});
 	}
