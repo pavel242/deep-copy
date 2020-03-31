@@ -1,3 +1,8 @@
+/*
+Asynchronous deep-copy procedure for JavaScript 
+Based on Worker api
+*/
+
 var deepCopy = (function() {
 	var blob = new Blob(["self.onmessage = function(e) { self.postMessage(e.data); }"], { type: 'application/javascript;' });
    	var url = URL.createObjectURL(blob);
