@@ -1,2 +1,6 @@
 # deep-copy
-deep copy tool for javascript
+
+Asynchronous deep-copy procedure for JavaScript 
+Based on Worker api
+
+
