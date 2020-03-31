@@ -7,7 +7,7 @@ var deepCopy = (function() {
 	var blob = new Blob(["self.onmessage = function(e) { self.postMessage(e.data); }"], { type: 'application/javascript;' });
    	var url = URL.createObjectURL(blob);
 	var worker = new Worker(url);
-	//URL.revokeObjectURL(url);
+	//URL.revokeObjectURL(url); fix for IE
 
 	var count = 0;
 	var resolvers = {};
